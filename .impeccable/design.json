@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-19T14:30:00Z",
+  "title": "Design System: The Green Lounge",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Olive Grove",
+        "canonical": "oklch(50% 0.08 140)",
+        "tonalRamp": ["oklch(15% 0.02 140)", "oklch(25% 0.04 140)", "oklch(35% 0.06 140)", "oklch(45% 0.07 140)", "oklch(50% 0.08 140)", "oklch(60% 0.07 140)", "oklch(75% 0.05 140)", "oklch(90% 0.02 140)"]
+      },
+      "primary-deep": {
+        "role": "primary",
+        "displayName": "Olive Deep",
+        "canonical": "oklch(40% 0.06 140)"
+      },
+      "bg-cream": {
+        "role": "neutral",
+        "displayName": "Cream Paper",
+        "canonical": "oklch(97% 0.01 90)",
+        "tonalRamp": ["oklch(15% 0.005 90)", "oklch(30% 0.008 90)", "oklch(50% 0.01 90)", "oklch(70% 0.01 90)", "oklch(85% 0.01 90)", "oklch(92% 0.01 90)", "oklch(97% 0.01 90)", "oklch(99% 0.005 90)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink Black",
+        "canonical": "oklch(10% 0 0)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page title in header. Hero heading only."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Menu item names and general body copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Category section numbers and small uppercase labels."
+      }
+    },
+    "breakpoints": [
+      { "name": "mobile", "value": "390px" },
+      { "name": "tablet", "value": "640px" },
+      { "name": "desktop", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Category Button",
+      "kind": "button",
+      "refersTo": "category-button",
+      "description": "Sticky horizontal-scroll category filter for menu sections.",
+      "html": "<button class=\"ds-cat-btn\">Espresso Bar</button>\n<button class=\"ds-cat-btn ds-cat-btn--active\">Specialty Brew</button>",
+      "css": ".ds-cat-btn { flex-shrink: 0; padding: 0.5rem 0.875rem; border: none; border-radius: 6px; font-family: 'Alexandria', system-ui, sans-serif; font-size: 0.75rem; font-weight: 600; cursor: pointer; background: transparent; color: #4C5A3E; white-space: nowrap; letter-spacing: 0.02em; text-transform: uppercase; transition: background 0.2s; } .ds-cat-btn:hover { background: #4C5A3E25; } .ds-cat-btn--active { background: #4C5A3E; color: #fff; }"
+    },
+    {
+      "name": "Menu Item Row",
+      "kind": "custom",
+      "refersTo": "menu-item",
+      "description": "Single menu item with name and price in a flex row.",
+      "html": "<div class=\"ds-menu-item\"><span class=\"ds-item-name\">Espresso</span><span class=\"ds-item-price\">JD 1.50</span></div>",
+      "css": ".ds-menu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 0.55rem 0; border-bottom: 1px dashed #d9d2c9; } .ds-menu-item:last-child { border-bottom: none; } .ds-item-name { font-size: 0.9rem; font-weight: 500; color: #1a1a1a; flex: 1; } .ds-item-price { font-size: 0.9rem; font-weight: 600; color: #4C5A3E; margin-left: 1rem; white-space: nowrap; }"
+    },
+    {
+      "name": "Highlight Card",
+      "kind": "card",
+      "refersTo": "highlight-card",
+      "description": "Informational card in the highlights grid.",
+      "html": "<div class=\"ds-hl-card\"><div class=\"ds-hl-icon\">☕</div><div class=\"ds-hl-label\">100% Arabica</div><div class=\"ds-hl-desc\">Specialty beans</div></div>",
+      "css": ".ds-hl-card { background: #fff; border: 1px solid #e8e2da; border-radius: 8px; padding: 0.75rem; text-align: center; } .ds-hl-icon { font-size: 1.25rem; margin-bottom: 0.25rem; } .ds-hl-label { font-size: 0.7rem; font-weight: 600; color: #4C5A3E; text-transform: uppercase; letter-spacing: 0.05em; } .ds-hl-desc { font-size: 0.65rem; color: #888; margin-top: 0.125rem; }"
+    },
+    {
+      "name": "Language Toggle",
+      "kind": "button",
+      "refersTo": "lang-toggle",
+      "description": "Inline language switcher in the header.",
+      "html": "<a href=\"#\" class=\"ds-lang-toggle\">العربية</a>",
+      "css": ".ds-lang-toggle { display: inline-block; font-size: 0.75rem; color: #ffffffcc; text-decoration: none; border: 1px solid #ffffff40; padding: 0.25rem 0.75rem; border-radius: 4px; transition: background 0.2s, color 0.2s; } .ds-lang-toggle:hover { background: #ffffff15; color: #fff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Green Lounge",
+    "overview": "A warm, earthy refuge. The design system for Andi's Coffee is a calm, confident visual identity built around a deliberate green (#4C5A3E). It feels like walking into a space where craft matters: the wood is oiled, the coffee is measured, and every surface has a place.",
+    "keyCharacteristics": [
+      "Committed green palette that carries 30-60% of the surface",
+      "Serif display + warm sans body pairing",
+      "Flat surfaces with tonal layering, no shadows",
+      "Bilingual by default (Arabic RTL + English LTR)",
+      "Mobile-first, instantly loading, zero dependency"
+    ],
+    "rules": [
+      { "name": "The Green Commitment Rule", "body": "The primary green is not an accent — it IS the brand. It occupies the header, the active state, the footer, and price labels.", "section": "colors" },
+      { "name": "The No-Beige Rule", "body": "The background is Cream Paper tinted toward green, not generic beige. If the background looks like every other cafe site, it's wrong.", "section": "colors" }
+    ],
+    "dos": [
+      "Do use the green (#4C5A3E) as the dominant brand colour across header, footer, and active states.",
+      "Do show every menu price immediately — no taps, no reveals, no interaction required.",
+      "Do support English and Arabic as equals with instant toggle and no reload.",
+      "Do load the menu in under 2 seconds on Jordanian 3G/4G.",
+      "Do use flat surfaces with tonal layering instead of shadows."
+    ],
+    "donts": [
+      "Don't hide prices behind taps or interaction.",
+      "Don't use heavy React SPAs that blank out on slow networks.",
+      "Don't use PDF menus requiring pinch-zoom on mobile.",
+      "Don't use beige-on-beige AI-generated cafe palettes, Fraunces fonts, or glassmorphism.",
+      "Don't use gradient text, side-stripe borders, or numbered section markers as decoration."
+    ]
+  }
+}

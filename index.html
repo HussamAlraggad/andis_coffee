@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andi's Coffee · Menu · Jubeiha, Amman</title>
+<meta name="description" content="Andi's Coffee menu — premium 100% Arabica coffee, specialty brews, bakery, and desserts in Jubeiha, Amman, Jordan. Opposite the North Gate of the University of Jordan.">
+<style>
+@font-face {
+  font-family: 'Alexandria';
+  src: url('https://fonts.gstatic.com/s/alexandria/v1/UMBCrPdDqW66y0Y2usFeQCD18mnU.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYpHtKgS4.woff2') format('woff2');
+  font-display: swap;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Alexandria',system-ui,-apple-system,sans-serif;background:#faf8f5;color:#1a1a1a;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+
+/* header */
+.header{background:#4C5A3E;color:#fff;padding:2rem 1rem 1.5rem;text-align:center}
+.header-logo{width:48px;height:48px;margin:0 auto .75rem;display:block;border-radius:50%;background:#ffffff20;padding:8px}
+.header-logo svg{width:100%;height:100%;fill:#fff}
+.header h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.75rem,5vw,2.5rem);font-weight:600;letter-spacing:-.02em}
+.header p{font-size:.875rem;opacity:.85;margin-top:.25rem}
+.header .tagline{font-style:italic;font-size:.8rem;opacity:.7;margin-top:.125rem}
+.lang-toggle{display:inline-block;margin-top:.75rem;font-size:.75rem;color:#ffffffcc;text-decoration:none;border:1px solid #ffffff40;padding:.25rem .75rem;border-radius:4px;transition:.2s}
+.lang-toggle:hover{background:#ffffff15;color:#fff}
+
+/* nav categories */
+.categories{display:flex;gap:.375rem;padding:.75rem 1rem;overflow-x:auto;scrollbar-width:none;background:#f4f1ec;position:sticky;top:0;z-index:10;-webkit-overflow-scrolling:touch}
+.categories::-webkit-scrollbar{display:none}
+.cat-btn{flex-shrink:0;padding:.5rem .875rem;border:none;border-radius:6px;font-family:inherit;font-size:.75rem;font-weight:600;cursor:pointer;background:transparent;color:#4C5A3E;transition:.2s;white-space:nowrap;letter-spacing:.02em;text-transform:uppercase}
+.cat-btn.active,.cat-btn:active{background:#4C5A3E;color:#fff}
+.cat-btn:hover{background:#4C5A3E15}
+
+/* menu sections */
+.menu{padding:1rem;max-width:640px;margin:0 auto}
+.menu-section{margin-bottom:2rem}
+.section-header{position:relative;margin-bottom:.75rem;padding-top:.5rem}
+.section-header h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.35rem;font-weight:600;color:#4C5A3E;letter-spacing:-.01em}
+.section-header .section-num{display:inline-block;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#4C5A3E80;margin-bottom:.125rem}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:.55rem 0;border-bottom:1px dashed #d9d2c9}
+.menu-item:last-child{border-bottom:none}
+.item-name{font-size:.9rem;font-weight:500;color:#1a1a1a;flex:1}
+.item-price{font-size:.9rem;font-weight:600;color:#4C5A3E;margin-left:1rem;white-space:nowrap}
+.item-desc{font-size:.75rem;color:#666;flex-basis:100%;margin-top:.1rem}
+
+/* highlights */
+.highlights{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;max-width:640px;margin:1rem auto;padding:0 1rem}
+.highlight{background:#fff;border:1px solid #e8e2da;border-radius:8px;padding:.75rem;text-align:center}
+.highlight-icon{font-size:1.25rem;margin-bottom:.25rem}
+.highlight-label{font-size:.7rem;font-weight:600;color:#4C5A3E;text-transform:uppercase;letter-spacing:.05em}
+.highlight-desc{font-size:.65rem;color:#888;margin-top:.125rem}
+
+/* footer */
+.footer{background:#4C5A3E;color:#fff;text-align:center;padding:2rem 1rem;margin-top:2rem}
+.footer h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;font-weight:600;margin-bottom:.25rem}
+.footer p{font-size:.8rem;opacity:.8;margin-bottom:.25rem}
+.footer-links{display:flex;justify-content:center;gap:1rem;margin-top:.75rem;flex-wrap:wrap}
+.footer-links a{color:#fff;text-decoration:none;font-size:.8rem;padding:.4rem .9rem;border:1px solid #ffffff40;border-radius:6px;transition:.2s}
+.footer-links a:hover{background:#ffffff15}
+.footer .credit{font-size:.65rem;opacity:.5;margin-top:1rem}
+
+/* print */
+@media print{body{background:#fff;color:#000}.header,.footer,.categories{display:none}.menu{max-width:100%;padding:0}.menu-section{break-inside:avoid}}
+
+/* dark mode */
+@media(prefers-color-scheme:dark){body{background:#1a1a1a;color:#e8e2da}.header{background:#3a4730}.categories{background:#222;border-bottom:1px solid #333}.cat-btn{color:#8a9a7a}.cat-btn.active{background:#4C5A3E;color:#fff}.menu-item{border-color:#333}.item-name{color:#e8e2da}.item-price{color:#8a9a7a}.item-desc{color:#999}.highlight{background:#222;border-color:#333}.highlight-label{color:#8a9a7a}.footer{background:#3a4730}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-width="2"/><path d="M16 20c0-4 3-8 8-8s8 4 8 8v8c0 4-3 8-8 8s-8-4-8-8v-8z" fill="none" stroke="#fff" stroke-width="2"/><path d="M16 24h16" stroke="#fff" stroke-width="2"/></svg>
+  </div>
+  <h1>Andi's Coffee</h1>
+  <p>Jubeiha · Amman</p>
+  <p class="tagline">— The Art of Coffee —</p>
+  <a href="#" class="lang-toggle" lang="ar" onclick="toggleLang(event)">العربية</a>
+</header>
+
+<nav class="categories" id="categories" aria-label="Menu categories"></nav>
+
+<div class="highlights">
+  <div class="highlight">
+    <div class="highlight-icon">☕</div>
+    <div class="highlight-label">100% Arabica</div>
+    <div class="highlight-desc">Specialty beans, globally sourced</div>
+  </div>
+  <div class="highlight">
+    <div class="highlight-icon">🛋️</div>
+    <div class="highlight-label">Work & Study</div>
+    <div class="highlight-desc">Calm, comfortable, focused space</div>
+  </div>
+  <div class="highlight">
+    <div class="highlight-icon">📍</div>
+    <div class="highlight-label">Prime Location</div>
+    <div class="highlight-desc">Opposite UJ North Gate</div>
+  </div>
+  <div class="highlight">
+    <div class="highlight-icon">🍰</div>
+    <div class="highlight-label">Fresh Bakery</div>
+    <div class="highlight-desc">Baked daily on site</div>
+  </div>
+</div>
+
+<main class="menu" id="menu"></main>
+
+<footer class="footer">
+  <h3>Andi's Coffee</h3>
+  <p>Jubeiha, Amman — Opposite the North Gate of the University of Jordan</p>
+  <div class="footer-links">
+    <a href="https://maps.app.goo.gl/gMHcrnJ3zadANxA59" target="_blank" rel="noopener">📍 Open in Maps</a>
+    <a href="https://www.instagram.com/andis_coffee/" target="_blank" rel="noopener">📸 @andis_coffee</a>
+    <a href="https://andiscoffeehouse.com" target="_blank" rel="noopener">🌐 Full Site</a>
+  </div>
+  <p class="credit">Scan this QR code at your table to view the menu</p>
+</footer>
+
+<script>
+const menuData = {
+  en: [
+    {
+      num: "01", title: "Classic Espresso Bar",
+      items: [
+        { name: "Espresso", price: "JD 1.50" },
+        { name: "Americano", price: "JD 2.50" },
+        { name: "Filter Coffee", price: "JD 2.50" },
+        { name: "Espresso Macchiato", price: "JD 2.50" },
+        { name: "Cortado", price: "JD 2.75" },
+        { name: "Flat White", price: "JD 2.75" },
+        { name: "Cappuccino", price: "JD 3.00" },
+        { name: "Latte", price: "JD 3.00" },
+        { name: "Turkish Coffee", price: "JD 1.50" }
+      ]
+    },
+    {
+      num: "02", title: "Specialty Brew Bar",
+      items: [
+        { name: "V60", price: "JD 3.50" },
+        { name: "Chemex", price: "JD 3.50" },
+        { name: "Cold Brew", price: "JD 3.50" }
+      ]
+    },
+    {
+      num: "03", title: "Sweet Latte Signatures",
+      items: [
+        { name: "Andi's Latte", price: "JD 3.50" },
+        { name: "Pumpkin Spice Latte", price: "JD 3.50" },
+        { name: "French Vanilla Latte", price: "JD 3.50" },
+        { name: "Spanish Latte", price: "JD 3.50" },
+        { name: "Salted Caramel Latte", price: "JD 3.50" },
+        { name: "Mocha / White Mocha", price: "JD 3.50" },
+        { name: "Caramel Macchiato", price: "JD 3.50" }
+      ]
+    },
+    {
+      num: "04", title: "Tea & Comfort Drinks",
+      items: [
+        { name: "English Breakfast Tea", price: "JD 2.00" },
+        { name: "Green Tea", price: "JD 2.00" },
+        { name: "Earl Grey", price: "JD 2.00" },
+        { name: "Matcha", price: "JD 3.50" },
+        { name: "Apple Rose Tea", price: "JD 3.50" },
+        { name: "Karak Tea", price: "JD 2.50" },
+        { name: "Hot Chocolate", price: "JD 3.00" },
+        { name: "Toffee Crunch", price: "JD 3.00" },
+        { name: "Hot Oreo", price: "JD 3.00" },
+        { name: "Sahlab", price: "JD 3.00" }
+      ]
+    },
+    {
+      num: "05", title: "House Frappe Blends",
+      items: [
+        { name: "Caramel Frappe", price: "JD 3.50" },
+        { name: "Mocha Frappe", price: "JD 3.50" },
+        { name: "White Mocha Frappe", price: "JD 3.50" },
+        { name: "Matcha Frappe", price: "JD 3.75" }
+      ]
+    },
+    {
+      num: "06", title: "Sparkling Signature Coolers",
+      items: [
+        { name: "Sunset Splash", price: "JD 3.00" },
+        { name: "Sour Punch", price: "JD 3.00" },
+        { name: "Garden Kiss", price: "JD 3.00" },
+        { name: "Mango Spark", price: "JD 3.00" },
+        { name: "Tropical", price: "JD 3.00" },
+        { name: "Eclipse", price: "JD 3.00" },
+        { name: "Ruby Rush", price: "JD 3.00" }
+      ]
+    },
+    {
+      num: "07", title: "Smoothies & Fresh Juice",
+      items: [
+        { name: "Mango Smoothie", price: "JD 3.50" },
+        { name: "Passion Fruit Smoothie", price: "JD 3.50" },
+        { name: "Peach Smoothie", price: "JD 3.50" },
+        { name: "Strawberry Smoothie", price: "JD 3.50" },
+        { name: "Blueberry Smoothie", price: "JD 3.50" },
+        { name: "Fresh Orange Juice", price: "JD 3.00" }
+      ]
+    },
+    {
+      num: "08", title: "Bakery Sweets",
+      items: [
+        { name: "Cookies", price: "JD 2.00" },
+        { name: "Muffins", price: "JD 2.00" },
+        { name: "Tiramisu", price: "JD 3.50" },
+        { name: "Brookies", price: "JD 4.00" },
+        { name: "Biscoff Brownies", price: "JD 4.50" },
+        { name: "Cinnamon Rolls", price: "JD 4.50" },
+        { name: "Andi's Cheesecake", price: "JD 3.50" },
+        { name: "Nutella Crunch Cake", price: "JD 3.50" },
+        { name: "Lava Cake", price: "JD 4.25" },
+        { name: "Pistachio Lava Cake", price: "JD 4.25" }
+      ]
+    },
+    {
+      num: "09", title: "Sandwiches & Light Bites",
+      items: [
+        { name: "Greek Salad", price: "JD 3.00" },
+        { name: "Pasta Salad", price: "JD 3.00" },
+        { name: "Turkey Salad", price: "JD 3.00" },
+        { name: "Halloumi Sandwich", price: "JD 2.90" },
+        { name: "Turkey Sandwich", price: "JD 2.90" },
+        { name: "Roastbeef Sandwich", price: "JD 2.90" }
+      ]
+    },
+    {
+      num: "10", title: "Add-Ons & Extras",
+      items: [
+        { name: "Extra Shot", price: "JD 0.50" },
+        { name: "Flavored Syrup", price: "JD 0.50" },
+        { name: "Alternative Milk", price: "JD 1.00" },
+        { name: "Decaf", price: "JD 0.50" }
+      ]
+    }
+  ],
+  ar: [
+    {
+      num: "٠١", title: "ركن الإسبريسو الكلاسيكي",
+      items: [
+        { name: "إسبريسو", price: "JD 1.50" },
+        { name: "أمريكانو", price: "JD 2.50" },
+        { name: "فلتر كوفي", price: "JD 2.50" },
+        { name: "إسبريسو ماكياتو", price: "JD 2.50" },
+        { name: "كورتادو", price: "JD 2.75" },
+        { name: "فلات وايت", price: "JD 2.75" },
+        { name: "كابتشينو", price: "JD 3.00" },
+        { name: "لاتيه", price: "JD 3.00" },
+        { name: "قهوة تركية", price: "JD 1.50" }
+      ]
+    },
+    {
+      num: "٠٢", title: "مشروبات مختصة",
+      items: [
+        { name: "V60", price: "JD 3.50" },
+        { name: "كيمكس", price: "JD 3.50" },
+        { name: "كولد برو", price: "JD 3.50" }
+      ]
+    },
+    {
+      num: "٠٣", title: "اللاتيه المميز",
+      items: [
+        { name: "لاتيه أنديز", price: "JD 3.50" },
+        { name: "لاتيه بامبكن سبايس", price: "JD 3.50" },
+        { name: "لاتيه فرنش فانيلا", price: "JD 3.50" },
+        { name: "لاتيه إسباني", price: "JD 3.50" },
+        { name: "لاتيه سالتيد كراميل", price: "JD 3.50" },
+        { name: "موكا / وايت موكا", price: "JD 3.50" },
+        { name: "كراميل ماكياتو", price: "JD 3.50" }
+      ]
+    },
+    {
+      num: "٠٤", title: "شاي ومشروبات دافئة",
+      items: [
+        { name: "شاي إنجليزي", price: "JD 2.00" },
+        { name: "شاي أخضر", price: "JD 2.00" },
+        { name: "إيرل غري", price: "JD 2.00" },
+        { name: "ماتشا", price: "JD 3.50" },
+        { name: "شاي تفاح وورد", price: "JD 3.50" },
+        { name: "شاي كرك", price: "JD 2.50" },
+        { name: "هوت تشوكليت", price: "JD 3.00" },
+        { name: "توفي كرانش", price: "JD 3.00" },
+        { name: "هوت أوريو", price: "JD 3.00" },
+        { name: "سحلب", price: "JD 3.00" }
+      ]
+    },
+    {
+      num: "٠٥", title: "مشروبات فرابيه مثلجة",
+      items: [
+        { name: "فرابيه كراميل", price: "JD 3.50" },
+        { name: "فرابيه موكا", price: "JD 3.50" },
+        { name: "فرابيه وايت موكا", price: "JD 3.50" },
+        { name: "فرابيه ماتشا", price: "JD 3.75" }
+      ]
+    },
+    {
+      num: "٠٦", title: "مشروبات غازية منعشة",
+      items: [
+        { name: "صنسيت سبلاش", price: "JD 3.00" },
+        { name: "ساور بانش", price: "JD 3.00" },
+        { name: "قاردن كيس", price: "JD 3.00" },
+        { name: "مانجو سبارك", price: "JD 3.00" },
+        { name: "تروبيكال", price: "JD 3.00" },
+        { name: "إكليبس", price: "JD 3.00" },
+        { name: "روبي راش", price: "JD 3.00" }
+      ]
+    },
+    {
+      num: "٠٧", title: "سموذي وعصائر طازجة",
+      items: [
+        { name: "سموذي مانجو", price: "JD 3.50" },
+        { name: "سموذي باشن فروت", price: "JD 3.50" },
+        { name: "سموذي خوخ", price: "JD 3.50" },
+        { name: "سموذي فراولة", price: "JD 3.50" },
+        { name: "سموذي توت", price: "JD 3.50" },
+        { name: "عصير برتقال طازج", price: "JD 3.00" }
+      ]
+    },
+    {
+      num: "٠٨", title: "مخبوزات وحلويات",
+      items: [
+        { name: "كوكيز", price: "JD 2.00" },
+        { name: "مفن", price: "JD 2.00" },
+        { name: "تيراميسو", price: "JD 3.50" },
+        { name: "بروكيز", price: "JD 4.00" },
+        { name: "بسكوف براوني", price: "JD 4.50" },
+        { name: "سينابون رول", price: "JD 4.50" },
+        { name: "تشيز كيك أنديز", price: "JD 3.50" },
+        { name: "كيك نوتيلا كرانش", price: "JD 3.50" },
+        { name: "كيك لافا", price: "JD 4.25" },
+        { name: "كيك لافا فستق", price: "JD 4.25" }
+      ]
+    },
+    {
+      num: "٠٩", title: "ساندويشات ووجبات خفيفة",
+      items: [
+        { name: "سلطة يونانية", price: "JD 3.00" },
+        { name: "سلطة باستا", price: "JD 3.00" },
+        { name: "سلطة ديك رومي", price: "JD 3.00" },
+        { name: "ساندويش حلوم", price: "JD 2.90" },
+        { name: "ساندويش ديك رومي", price: "JD 2.90" },
+        { name: "ساندويش روست بيف", price: "JD 2.90" }
+      ]
+    },
+    {
+      num: "١٠", title: "إضافات",
+      items: [
+        { name: "شوت إضافي", price: "JD 0.50" },
+        { name: "سيروب نكهة", price: "JD 0.50" },
+        { name: "حليب بديل", price: "JD 1.00" },
+        { name: "ديكاف", price: "JD 0.50" }
+      ]
+    }
+  ]
+};
+
+let currentLang = 'en';
+
+function renderMenu(lang) {
+  const menu = document.getElementById('menu');
+  const nav = document.getElementById('categories');
+  const data = menuData[lang];
+  menu.innerHTML = '';
+  nav.innerHTML = '';
+
+  data.forEach((section, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'cat-btn' + (i === 0 ? ' active' : '');
+    btn.textContent = section.title;
+    btn.onclick = () => {
+      document.querySelector('.cat-btn.active')?.classList.remove('active');
+      btn.classList.add('active');
+      document.getElementById('s-' + i).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    nav.appendChild(btn);
+
+    const sec = document.createElement('section');
+    sec.className = 'menu-section';
+    sec.id = 's-' + i;
+    sec.innerHTML = `
+      <div class="section-header">
+        <span class="section-num">${section.num}</span>
+        <h2>${section.title}</h2>
+      </div>
+      ${section.items.map(item => `
+        <div class="menu-item">
+          <span class="item-name">${item.name}</span>
+          <span class="item-price">${item.price}</span>
+        </div>
+      `).join('')}
+    `;
+    menu.appendChild(sec);
+  });
+}
+
+function toggleLang(e) {
+  e.preventDefault();
+  currentLang = currentLang === 'en' ? 'ar' : 'en';
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelector('.lang-toggle').textContent = currentLang === 'ar' ? 'English' : 'العربية';
+  document.querySelector('.lang-toggle').href = '#';
+  renderMenu(currentLang);
+}
+
+renderMenu('en');
+</script>
+</body>
+</html>
